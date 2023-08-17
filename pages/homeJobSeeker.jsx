@@ -13,6 +13,7 @@ import Router from 'next/router';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import { Typography } from '@mui/material';
+import JobBoardButton from '../src/JobBoardButton'
 
 const HomeJobSeeker = () => {
   const [jobListings, setJobListings] = useState([]);
@@ -63,9 +64,7 @@ const HomeJobSeeker = () => {
       <NavBar />
       <Typography align="center" mt="50px">You have not applied to any jobs yet. Go to the Job Board to find jobs!</Typography>
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', mt: '2em' }}>
-        <Button variant="contained">
-          <Link style={{ textDecoration: 'none', color: 'inherit' }} href="/jobSearch">Job Board</Link>
-        </Button>
+        <JobBoardButton />
       </Box>
       </>
     )
