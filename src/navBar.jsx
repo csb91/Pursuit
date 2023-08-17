@@ -114,9 +114,9 @@ const NavBar = ({ page }) => {
   return (
     <AppBar position='static' sx={{ bgcolor: '#E44F48' }}>
       <Container maxWidth="xl" >
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{justifyContent: 'space-between'}}>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{  display: { xs: 'flex', md: 'none' }}}>
             <IconButton
               size="large"
               aria-label="user-account"
@@ -155,11 +155,11 @@ const NavBar = ({ page }) => {
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
             <Image src='/assets/logo.png' alt='Job-Pursuit-Logo' width='200' height='50' />
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
 
               <Link key={page[1]} href={page[1]} passHref style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -174,7 +174,7 @@ const NavBar = ({ page }) => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{display: 'flex', width:{ sm:30, md:200 }, justifyContent: 'end'}}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="user" src={avatarImage} />
